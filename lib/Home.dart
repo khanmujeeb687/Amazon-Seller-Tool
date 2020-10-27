@@ -55,6 +55,8 @@ class _HomeState extends State<Home> {
     }
   }
 
+
+
   void _fetchTextFromPdf(String filePath) async{
     setState(() {
       loading=true;
