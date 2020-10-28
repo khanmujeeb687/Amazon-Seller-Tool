@@ -9,6 +9,10 @@ class Constants{
 
 
 
+  //
+  static const IGST='IGST';
+
+
 
   static int getInvoiceNumberStartIndex(String text){
     return text.indexOf(Constants.INVOICE_NUMBER)+17;

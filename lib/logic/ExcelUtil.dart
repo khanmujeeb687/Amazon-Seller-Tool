@@ -37,9 +37,11 @@ class ExcelUtil{
       "Invoice Date",
       "Place of supply",
       "Description",
-      "Tax Type",
       "Net Amount",
       "Tax amount",
+      "IGST",
+      "CGST",
+      "SGST"
     ]);
   }
   void _addARow(AmazonPdf _data){
@@ -48,9 +50,11 @@ class ExcelUtil{
       _data.invoice_date,
       _data.place_of_supply,
       _data.description,
-      _data.tax_type,
       _data.net_ammount,
       _data.tax_amount,
+      _data.IGST,
+      _data.CGST,
+      _data.SGST,
     ]);
   }
 
