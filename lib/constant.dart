@@ -12,6 +12,8 @@ class Constants{
   //
   static const IGST='IGST';
 
+  static const APP_NAME='ExaTool';
+
 
 
   static int getInvoiceNumberStartIndex(String text){
