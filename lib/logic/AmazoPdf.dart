@@ -11,9 +11,9 @@ class AmazonPdf{
   String _tax_type;
   String net_ammount;
   String tax_amount;
-  String IGST="-";
-  String CGST="-";
-  String SGST="-";
+  String IGST="0";
+  String CGST="0";
+  String SGST="0";
   AmazonPdf(String pdfText){
   this.pdfText=pdfText;
  invoice_number  =  PdfUtil.getInVoiceNumber(pdfText);
