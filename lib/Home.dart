@@ -2,9 +2,13 @@ import 'dart:io';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:juna/components/BazarComponents.dart';
 import 'package:juna/logic/AmazoPdf.dart';
 import 'package:juna/logic/ExcelUtil.dart';
 import 'package:juna/logic/amazon_pdf_toexcel_maker.dart';
+import 'package:juna/util/screen_util.dart';
+import 'package:juna/values/assets.dart';
+import 'package:lottie/lottie.dart';
 import 'package:open_file/open_file.dart';
 import 'file:///G:/AndroidStudioProjects/bazar/juna/lib/logic/PdfUtil.dart';
 import 'package:pdf_text/pdf_text.dart';
@@ -23,25 +27,19 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: loading?Center(
-        child: CircularProgressIndicator(),
-      ):Center(
-        child:data==null? Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Lottie.asset(Assets.LoadingAnimation),
+      ):Container(
+        padding: EdgeInsets.all(15),
+        width: ScreenUtil.getScreenWidth(context),
+        height: ScreenUtil.getScreenHeight(context),
+        child:Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           mainAxisSize: MainAxisSize.max,
           children: [
-            RaisedButton(onPressed: _selectfile,
-            child: Text("Select File"),
-            )
+            Container(
+                width: ScreenUtil.getScreenWidth(context),
+                child: BazarRoundedButton("Convert a pdf",onClick: _selectfile))
           ],
-        ):Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: ListTile(
-              title: Text(data),
-            subtitle: RaisedButton(
-            child: Text("open"),
-              onPressed: ()=>OpenFile.open(data),
-          )
-              )
         ),
       )
     );

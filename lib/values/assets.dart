@@ -1,4 +1,5 @@
 class Assets{
- static const String LoadingAnimation="assets/lottie/loader.json";
- static const String SellerBg="assets/lottie/seller_bg.json";
+ static const String LoadingAnimation="assets/loader.json";
+ static const String pdf="assets/pdf.json";
+ static const String scn="assets/scan.json";
 }
