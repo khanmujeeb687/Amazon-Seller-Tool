@@ -5,7 +5,13 @@ class Constants{
   static const DESCRIPTION='Tax\nAmount\nTotal\nAmount';
   static const TAX_TYPE='Tax Type';
   static const NET_AMOUNT='Net Amount';
-  static const TAX_AMOUNT='Tax Amount';
+  static const  TAX_AMOUNT='Tax Amount';
+
+
+
+  //ui
+  static const double BUTTON_BORDER_RADIUS=20;
+
 
 
 

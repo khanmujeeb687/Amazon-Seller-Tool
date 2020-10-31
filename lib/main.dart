@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:juna/values/themes.dart';
 
 import 'Home.dart';
 
@@ -7,6 +8,7 @@ void main() {
     new MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Home(),
+      theme: BazarThemes.LightTheme,
       title:"Juna"
     )
   );
