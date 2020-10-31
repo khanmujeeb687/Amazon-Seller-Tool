@@ -30,9 +30,18 @@ dependencies:
   cupertino_icons: ^1.0.0
   pdf_text: ^0.3.1
   excel: ^1.1.5
-  file_picker: 1.4.3+2
   path_provider: ^1.6.22
   open_file: ^3.0.3
+  flutter_icons: ^1.0.0+1
+  percent_indicator: ^2.1.1+1
+  page_transition: ^1.1.5
+  mime_type: ^0.2.4
+  permission_handler: ^4.2.0+hotfix.1
+  flutter_form_builder: ^3.14.1
+  hexcolor: ^1.0.6
+  google_fonts: ^1.1.0
+  fluttertoast: ^7.1.1
+  lottie: ^0.7.0+1
 
 
 
@@ -52,8 +61,9 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+     - assets/scan.json
+     - assets/pdf.json
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

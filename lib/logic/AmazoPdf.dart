@@ -32,6 +32,7 @@ class AmazonPdf{
     }else{
       this.SGST=this.tax_amount;
       this.CGST=this.tax_amount;
+      this.tax_amount=(double.parse(this.tax_amount.replaceAll(" ", ""))*2).toString();
     }
   }
 }

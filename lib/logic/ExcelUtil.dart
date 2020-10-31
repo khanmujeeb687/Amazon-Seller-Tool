@@ -17,7 +17,7 @@ class ExcelUtil{
 
  Future<String> createExcelFromDate() async {
     excel  = Excel.createExcel();
-    sheetObject = excel['AmazonSheet'];
+    sheetObject = excel['Sheet1'];
     _addHeading();
     for(int i=0;i<list.length;i++){
       _addARow(list[i]);
