@@ -49,15 +49,15 @@ class _HomeState extends State<Home> {
 
   void _selectfile() async{
     //TODO
-    List<File> filePickerResult=await FilePicker.getMultiFile(type: FileType.CUSTOM,fileExtension: 'pdf');
+    List<File> filePickerResult=await FilePicker.getMultiFile(type: FileType.custom,allowedExtensions: ['pdf']);
     if(filePickerResult!=null){
-      _fetchTextFromPdf(filePickerResult.first.path);
+      _fetchTextFromPdf(filePickerResult);
     }
   }
 
 
 
-  void _fetchTextFromPdf(String filePath) async{
+  void _fetchTextFromPdf(List<File> filePath) async{
     setState(() {
       loading=true;
     });
