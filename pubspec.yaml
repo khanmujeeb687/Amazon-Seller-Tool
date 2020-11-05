@@ -39,6 +39,9 @@ dependencies:
   fluttertoast: ^7.1.1
   popup_menu: ^1.0.5
   flutter_speed_dial: ^1.2.5
+  sqflite: ^1.2.1
+  flutter_share: ^1.0.3
+
 
 
 

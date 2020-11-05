@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:juna/values/themes.dart';
 
-import 'Home.dart';
+import 'screens/Home.dart';
 
 void main() {
   runApp(

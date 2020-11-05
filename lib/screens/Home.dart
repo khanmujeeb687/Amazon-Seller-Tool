@@ -6,6 +6,7 @@ import 'package:juna/components/BazarComponents.dart';
 import 'package:juna/logic/AmazoPdf.dart';
 import 'package:juna/logic/ExcelUtil.dart';
 import 'package:juna/logic/amazon_pdf_toexcel_maker.dart';
+import 'package:juna/util/navigation_util.dart';
 import 'package:juna/util/screen_util.dart';
 import 'package:juna/values/assets.dart';
 import 'package:lottie/lottie.dart';
@@ -13,11 +14,13 @@ import 'package:open_file/open_file.dart';
 import 'file:///G:/AndroidStudioProjects/bazar/juna/lib/logic/PdfUtil.dart';
 import 'package:pdf_text/pdf_text.dart';
 
+import 'results.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
 }
-
+ 
 class _HomeState extends State<Home> {
   File file;
   bool loading=false;
@@ -25,23 +28,28 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: loading?Center(
-        child: Lottie.asset(Assets.LoadingAnimation),
-      ):Container(
-        padding: EdgeInsets.all(15),
-        width: ScreenUtil.getScreenWidth(context),
-        height: ScreenUtil.getScreenHeight(context),
-        child:Column(
-          mainAxisAlignment: MainAxisAlignment.end,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            Container(
-                width: ScreenUtil.getScreenWidth(context),
-                child: BazarRoundedButton("Convert a pdf",onClick: _selectfile))
-          ],
-        ),
-      )
+    return WillPopScope(
+      onWillPop: (){
+          return Future.value(!loading);
+      },
+      child: Scaffold(
+        body: loading?Center(
+          child: Lottie.asset(Assets.LoadingAnimation),
+        ):Container(
+          padding: EdgeInsets.all(15),
+          width: ScreenUtil.getScreenWidth(context),
+          height: ScreenUtil.getScreenHeight(context),
+          child:Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              Container(
+                  width: ScreenUtil.getScreenWidth(context),
+                  child: BazarRoundedButton("Convert a pdf",onClick: _selectfile))
+            ],
+          ),
+        )
+      ),
     );
   }
 
@@ -64,5 +72,7 @@ class _HomeState extends State<Home> {
       data=data;
       loading=false;
     });
+    if(data==null) return;
+    NavigationUtil.navigate(context,Results(data));
   }
 }
