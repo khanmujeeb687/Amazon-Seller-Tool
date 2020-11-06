@@ -78,7 +78,7 @@ class ExcelUtil{
 
 
   _toInt(String text){
-    return int.parse(text.replaceAll(" ", ""));
+    return double.parse(text.replaceAll(" ", ""));
   }
 
 }
