@@ -11,7 +11,6 @@ import 'package:juna/util/screen_util.dart';
 import 'package:juna/values/assets.dart';
 import 'package:lottie/lottie.dart';
 import 'package:open_file/open_file.dart';
-import 'file:///G:/AndroidStudioProjects/bazar/juna/lib/logic/PdfUtil.dart';
 import 'package:pdf_text/pdf_text.dart';
 
 import 'results.dart';

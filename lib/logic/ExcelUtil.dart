@@ -50,11 +50,11 @@ class ExcelUtil{
       _data.invoice_date,
       _data.place_of_supply,
       _data.description,
-      _data.net_ammount,
-      _data.tax_amount,
-      _data.IGST,
-      _data.CGST,
-      _data.SGST,
+      _toInt(_data.net_ammount),
+    _toInt(_data.tax_amount),
+      _toInt(_data.IGST),
+      _toInt(_data.CGST),
+      _toInt(_data.SGST),
     ]);
   }
 
@@ -76,5 +76,9 @@ class ExcelUtil{
     return "$path/${filename}.xlsx";
   }
 
+
+  _toInt(String text){
+    return int.parse(text.replaceAll(" ", ""));
+  }
 
 }
