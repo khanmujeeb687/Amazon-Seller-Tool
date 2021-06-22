@@ -5,6 +5,7 @@ class AmazonPdf{
   String pdfText;
 
   String invoice_number;
+  String order_number;
   String invoice_date;
   String place_of_supply;
   String description;
@@ -18,6 +19,7 @@ class AmazonPdf{
   this.pdfText=pdfText;
  invoice_number  =  PdfUtil.getInVoiceNumber(pdfText);
  invoice_date  =  PdfUtil.getInvoiceDate(pdfText);
+ order_number  =  PdfUtil.getOrderNumber(pdfText);
  place_of_supply  =  PdfUtil.getPlaceOfDelivery(pdfText);
  description  =  PdfUtil.getDescription(pdfText);
  _tax_type  =  PdfUtil.getTaxType(pdfText);

@@ -33,6 +33,7 @@ class ExcelUtil{
 
   void _addHeading(){
     sheetObject.appendRow([
+      "Order Number",
       "Invoice Number",
       "Invoice Date",
       "Place of supply",
@@ -46,6 +47,7 @@ class ExcelUtil{
   }
   void _addARow(AmazonPdf _data){
     sheetObject.appendRow([
+      _data.order_number,
       _data.invoice_number,
       _data.invoice_date,
       _data.place_of_supply,

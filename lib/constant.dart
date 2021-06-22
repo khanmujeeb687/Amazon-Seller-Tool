@@ -6,6 +6,7 @@ class Constants{
   static const TAX_TYPE='Tax Type';
   static const NET_AMOUNT='Net Amount';
   static const  TAX_AMOUNT='Tax Amount';
+  static const  ORDER_NUMBER='Order Number: ';
 
 
 

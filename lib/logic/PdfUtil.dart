@@ -13,6 +13,11 @@ class PdfUtil{
       text.indexOf(Constants.INVOICE_DATE)+Constants.INVOICE_DATE.length+13,
     );
   }
+  static String getOrderNumber(String text){
+    String a= text.substring(text.indexOf(Constants.ORDER_NUMBER)+Constants.ORDER_NUMBER.length);
+    a=a.substring(0,a.indexOf(" "));
+    return a;
+  }
 static String getPlaceOfDelivery(String text){
   String first = text.substring(text.indexOf(Constants.PLACE_OF_SUPPLY)+Constants.PLACE_OF_SUPPLY.length+2);
 //  first=first.substring(0,first.indexOf(Constants.INVOICE_NUMBER));

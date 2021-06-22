@@ -28,7 +28,7 @@ BottomNavigationBar BazarBottomNavigationBar(int currentindex,Function(int a) on
       ),
       BottomNavigationBarItem(
           title: Text("Cart"),
-          icon: Icon(Icons.ac_unit_outlined)
+          icon: Icon(Icons.verified_user)
       ),
     ],
   );
