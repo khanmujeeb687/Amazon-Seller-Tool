@@ -59,4 +59,16 @@ static String getPlaceOfDelivery(String text){
 }
 
 
+  static String getSKU(String text) {
+    String inp = getPlaceOfDelivery(text);
+    RegExp regex = RegExp(r"\((.*?)\)");
+    Match match = regex.firstMatch(inp);
+
+    if (match != null) {
+      return match.group(1);
+    } else {
+      return "No match found";
+    }
+  }
+
 }

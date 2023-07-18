@@ -42,7 +42,8 @@ class ExcelUtil{
       "Tax amount",
       "IGST",
       "CGST",
-      "SGST"
+      "SGST",
+      "SKU"
     ]);
   }
   void _addARow(AmazonPdf _data){
@@ -57,6 +58,7 @@ class ExcelUtil{
       _toInt(_data.IGST),
       _toInt(_data.CGST),
       _toInt(_data.SGST),
+      _data.SKU
     ]);
   }
 

@@ -15,12 +15,14 @@ class AmazonPdf{
   String IGST="0.00";
   String CGST="0.00";
   String SGST="0.00";
+  String SKU="";
   AmazonPdf(String pdfText){
   this.pdfText=pdfText;
  invoice_number  =  PdfUtil.getInVoiceNumber(pdfText);
  invoice_date  =  PdfUtil.getInvoiceDate(pdfText);
  order_number  =  PdfUtil.getOrderNumber(pdfText);
  place_of_supply  =  PdfUtil.getPlaceOfDelivery(pdfText);
+ SKU  =  PdfUtil.getSKU(pdfText);
  description  =  PdfUtil.getDescription(pdfText);
  _tax_type  =  PdfUtil.getTaxType(pdfText);
  net_ammount  =  PdfUtil.getNetAmount(pdfText);
