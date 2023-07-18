@@ -3,23 +3,24 @@ import 'package:juna/constant.dart';
 class PdfUtil{
   static String getInVoiceNumber(String text){
     return text.substring(
-    text.indexOf(Constants.INVOICE_NUMBER)+Constants.INVOICE_NUMBER.length+3,
+    text.indexOf(Constants.INVOICE_NUMBER)+Constants.INVOICE_NUMBER.length+2,
     text.indexOf(Constants.INVOICE_NUMBER)+Constants.INVOICE_NUMBER.length+9,
-    );
+    ).replaceAll(" ", "");
   }
   static String getInvoiceDate(String text){
     return text.substring(
-      text.indexOf(Constants.INVOICE_DATE)+Constants.INVOICE_DATE.length+3,
+      text.indexOf(Constants.INVOICE_DATE)+Constants.INVOICE_DATE.length+2,
       text.indexOf(Constants.INVOICE_DATE)+Constants.INVOICE_DATE.length+13,
-    );
+    ).replaceAll(" ", "");
   }
   static String getOrderNumber(String text){
     String a= text.substring(text.indexOf(Constants.ORDER_NUMBER)+Constants.ORDER_NUMBER.length);
+    a = a[0]==' '?a.substring(1):a;
     a=a.substring(0,a.indexOf(" "));
     return a;
   }
 static String getPlaceOfDelivery(String text){
-  String first = text.substring(text.indexOf(Constants.PLACE_OF_SUPPLY)+Constants.PLACE_OF_SUPPLY.length+2);
+  String first = text.substring(text.indexOf(Constants.PLACE_OF_SUPPLY)+Constants.PLACE_OF_SUPPLY.length+1).trim();
 //  first=first.substring(0,first.indexOf(Constants.INVOICE_NUMBER));
   return first;
   }

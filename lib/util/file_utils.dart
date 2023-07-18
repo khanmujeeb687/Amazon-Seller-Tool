@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
-import 'package:intl/intl.dart';
+// import 'package:intl/intl.dart';
 import 'package:path/path.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -126,13 +126,14 @@ class FileUtils {
     DateTime yesterday = DateTime.parse(
         "${yDay.year}-${yDay.month.toString().padLeft(2, "0")}-${yDay.day.toString().padLeft(2, "0")}T00:00:00.000Z");
 
-    if (dateFormat == today) {
-      return "Today ${DateFormat("HH:mm").format(DateTime.parse(iso))}";
-    } else if (dateFormat == yesterday) {
-      return "Yesterday ${DateFormat("HH:mm").format(DateTime.parse(iso))}";
-    } else {
-      return "${DateFormat("MMM dd, HH:mm").format(DateTime.parse(iso))}";
-    }
+    return "";
+    // if (dateFormat == today) {
+    //   return "Today ${DateFormat("HH:mm").format(DateTime.parse(iso))}";
+    // } else if (dateFormat == yesterday) {
+    //   return "Yesterday ${DateFormat("HH:mm").format(DateTime.parse(iso))}";
+    // } else {
+    //   return "${DateFormat("MMM dd, HH:mm").format(DateTime.parse(iso))}";
+    // }
   }
 
   static List<FileSystemEntity> sortList(
