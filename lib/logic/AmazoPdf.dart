@@ -16,6 +16,7 @@ class AmazonPdf{
   String CGST="0.00";
   String SGST="0.00";
   String SKU="";
+  String total_value;
   AmazonPdf(String pdfText){
   this.pdfText=pdfText;
  invoice_number  =  PdfUtil.getInVoiceNumber(pdfText);
@@ -27,6 +28,7 @@ class AmazonPdf{
  _tax_type  =  PdfUtil.getTaxType(pdfText);
  net_ammount  =  PdfUtil.getNetAmount(pdfText);
  tax_amount  =  PdfUtil.getTaxAmount(pdfText);
+ total_value = (double.parse(net_ammount)+double.parse(tax_amount)).toString();
  _handleTax(_tax_type);
   }
 
