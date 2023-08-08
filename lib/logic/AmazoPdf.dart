@@ -28,8 +28,8 @@ class AmazonPdf{
  _tax_type  =  PdfUtil.getTaxType(pdfText);
  net_ammount  =  PdfUtil.getNetAmount(pdfText);
  tax_amount  =  PdfUtil.getTaxAmount(pdfText);
- total_value = (double.parse(net_ammount)+double.parse(tax_amount)).toString();
  _handleTax(_tax_type);
+  total_value = (double.parse(net_ammount)+double.parse(tax_amount)).toString();
   }
 
   void _handleTax(String taxtype){
